@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vampire Owner Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Raleway', sans-serif;
+            color: #ffffff; /* Base text color */
+            background-image: url('https://i.ibb.co/PxYGWTB/cool-background.png'); /* New background image */
+            background-size: cover; /* Cover full screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent repetition */
+            overflow-y: scroll; /* Enable vertical scroll */
+            font-weight: bold; /* Make all text bold */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        .container {
+            background: rgba(20, 20, 20, 0.9); /* Semi-transparent background */
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 8px 60px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            overflow-y: auto; /* Enable vertical scroll for content */
+            max-height: 90vh; /* Limit height */
+        }
+
+        .neon-text {
+            font-size: 60px; /* Adjust size as needed */
+            color: #ffffff; /* White color for the text */
+            text-shadow: 
+                0 0 5px #ffffff,    
+                0 0 10px #ffffff,
+                0 0 15px #ffffff,
+                0 0 20px #ffffff,
+                0 0 25px #ffffff;   
+            animation: flicker 1.5s infinite alternate; /* Optional flicker effect */
+            margin-bottom: 20px;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+
+        .section-heading {
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            margin: 15px 0;
+            color: #ffffff; /* Neutral color for headings */
+            text-shadow: 0 0 10px #ffffff;
+            font-weight: bold; /* Ensure section heading is bold */
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #ffffff; /* Change border color to white */
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .info-container {
+            background: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            width: 100%; /* Full width */
+            border: 1px solid rgba(255, 255, 255, 0.5); /* Thinner light white border with opacity */
+        }
+
+        .info, .dm-link {
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px #ffffff;
+            margin: 10px 0;
+            font-weight: bold; /* Ensure info and DM link are bold */
+        }
+
+        .dm-link a {
+            color: #ffffff; /* Neon white */
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid #ffffff;
+            transition: border 0.3s;
+        }
+
+        .dm-link a:hover {
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .channels, .activities {
+            margin-top: 30px;
+            width: 100%; /* Full width */
+        }
+
+        .channels ul, .activities ul {
+            padding: 0;
+            list-style-type: none;
+            margin: 0;
+            text-align: left;
+        }
+
+        .channels li, .activities li {
+            margin: 10px 0;
+            font-size: 1.3rem;
+            color: #ffffff; /* Neon white */
+            transition: color 0.3s;
+            font-weight: bold; /* Ensure channel and activity items are bold */
+        }
+
+        .channels li a, .activities li {
+            color: #ffffff; /* Neon white */
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            width: 100%;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .channels li a:hover, .activities li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ff0000;
+        }
+
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 12px; /* Thickness of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ffffff; /* Change scrollbar color to white */
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.8); /* Color on hover */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.5); /* Color of the tracking area */
+        }
+
+        /* Apply to all browsers */
+        * {
+            scrollbar-width: thin; /* For Firefox */
+            scrollbar-color: #ffffff rgba(0, 0, 0, 0.5); /* Scrollbar color and background */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .neon-text {
+                font-size: 2.5rem; /* Adjust size for smaller screens */
+            }
+            .info, .dm-link {
+                font-size: 1.2rem;
+            }
+            .section-heading {
+                font-size: 1.5rem;
+            }
+            img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .neon-text {
+                font-size: 2rem; /* Adjust size for smaller screens */
+            }
+            .info, .dm-link {
+                font-size: 1rem;
+            }
+            .section-heading {
+                font-size: 1.3rem;
+            }
+            img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .neon-text {
+                font-size: 1.5rem; /* Adjust size for smaller screens */
+            }
+            .info, .dm-link {
+                font-size: 0.9rem;
+            }
+            .section-heading {
+                font-size: 1.1rem;
+            }
+            img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="neon-text">𝐕𝐀𝐌𝐏𝐈𝐑𝐄𝐱𝐎𝐖𝐍𝐄𝐑</div>
+        <img src="https://i.ibb.co/bQgkjSg/Vampire-Owner.jpg" alt="Artistic representation of a fictional vampire owner character">
+
+        <div class="info-container">
+            <div class="info">𝘾𝙤𝙪𝙣𝙩𝙧𝙮: <strong>𝙄𝙣𝙙𝙞𝙖</strong></div>
+            <div class="dm-link">
+                𝘿𝙈: <a target="_blank" href="https://web.telegram.org/k/#@VAMPIRExOWNER" id="dm-link" aria-label="Direct message Vampire Owner">𝙑𝙖𝙢𝙥𝙞𝙧𝙚 𝙊𝙬𝙣𝙚𝙧</a>
+            </div>
+            <div class="info">𝘼𝙜𝙚: <strong>18</strong></div>
+        </div>
+
+        <div class="channels">
+            <div class="section-heading">𝙈𝙮 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢 𝘾𝙝𝙖𝙣𝙣𝙚𝙡𝙨:</div>
+            <ul>
+                <li><a target="_blank" href="https://t.me/+etn05blmfbhjN2Nl">𝙑𝘼𝙈𝙋𝙄𝙍𝙀 𝘿𝘿𝙊𝙎</a></li>
+                <li><a target="_blank" href="https://t.me/ABOUTVAMPIRExOWNER">𝐕𝐕𝐀𝐌𝐏𝐈𝐑𝐄𝐱𝐎𝐖𝐍𝐄𝐑</a></li>
+            </ul>
+        </div>
+
+        <div class="activities">
+            <div class="section-heading">𝘽𝙮 𝙑𝙖𝙢𝙥𝙞𝙧𝙚:</div>
+            <ul id="activity-list">
+                <li class="activity">𝘿𝘿𝙊𝙎 𝙈𝙖𝙠𝙞𝙣𝙜</li>
+                <li class="activity">𝘾𝙤𝙪𝙧𝙨𝙚 𝙎𝙚𝙡𝙡𝙞𝙣𝙜</li>
+                <li class="activity">𝘽𝙂𝙈𝙄 𝘼𝙘𝙘𝙤𝙪𝙣𝙩𝙨</li>
+                <li class="activity">𝙋𝙝𝙞𝙨𝙝𝙞𝙣𝙜 𝙒𝙚𝙗𝙨𝙞𝙩𝙚𝙨</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle the DM link click
+        document.getElementById('dm-link').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            alert('You will be redirected to DM Vampire Owner!'); // Replace with your desired functionality
+            window.open('https://web.telegram.org/k/#@VAMPIRExOWNER', '_blank'); // Open link in a new tab
+        });
+
+        // List of activities to display
+        const activities = [
+            "𝙈𝙖𝙠𝙞𝙣𝙜 𝙎𝙘𝙧𝙞𝙥𝙩𝙨",
+            "𝘿𝘿𝙊𝙎 𝙈𝙖𝙠𝙞𝙣𝙜",
+            "𝘾𝙤𝙪𝙧𝙨𝙚 𝙎𝙚𝙡𝙡𝙞𝙣𝙜",
+            "𝘽𝙂𝙈𝙄 𝘼𝙘𝙘𝙤𝙪𝙣𝙩𝙨",
+            "𝙋𝙝𝙞𝙨𝙝𝙞𝙣𝙜 𝙒𝙚𝙗𝙨𝙞𝙩𝙚𝙨"
+        ];
+
+        // Function to display the activities
+        function displayActivities() {
+            const activityList = document.getElementById('activity-list');
+            activities.forEach(activity => {
+                let li = document.createElement('li');
+                li.className = 'activity'; // Assign class for styling
+                li.textContent = activity; // Set the text content
+                activityList.appendChild(li); // Append the list item to the activity list
+            });
+        }
+
+        // Call the function to display activities on page load
+        window.onload = displayActivities;
+    </script>
+</body>
+</html>
